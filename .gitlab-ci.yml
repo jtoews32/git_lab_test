@@ -1,0 +1,17 @@
+stages:
+- deploy
+
+deploy-env-a:
+  stage: deploy
+  script:
+    - echo "$CI_ENVIRONMENT_NAME"
+  environment:
+    name: env-a
+
+deploy-env-b:
+  stage: deploy
+  script:
+    - echo "$$CI_ENVIRONMENT_NAME"
+  environment:
+    name: env-b
+
